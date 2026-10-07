@@ -1,0 +1,102 @@
+{
+  "evidence_type": "constructed timestamps; not measured",
+  "requests": [
+    {
+      "id": "A",
+      "scheduled_ms": 0,
+      "sent_ms": 20,
+      "done_ms": 380,
+      "success": true,
+      "prompt_tokens": 128,
+      "chunks": [
+        {
+          "at_ms": 120,
+          "tokens": 1
+        },
+        {
+          "at_ms": 140,
+          "tokens": 1
+        },
+        {
+          "at_ms": 160,
+          "tokens": 1
+        },
+        {
+          "at_ms": 360,
+          "tokens": 1
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "scheduled_ms": 0,
+      "sent_ms": 0,
+      "done_ms": 320,
+      "success": true,
+      "prompt_tokens": 128,
+      "chunks": [
+        {
+          "at_ms": 100,
+          "tokens": 1
+        },
+        {
+          "at_ms": 300,
+          "tokens": 1
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "scheduled_ms": 50,
+      "sent_ms": 50,
+      "done_ms": 210,
+      "success": true,
+      "prompt_tokens": 128,
+      "chunks": [
+        {
+          "at_ms": 150,
+          "tokens": 1
+        },
+        {
+          "at_ms": 160,
+          "tokens": 1
+        },
+        {
+          "at_ms": 170,
+          "tokens": 1
+        },
+        {
+          "at_ms": 180,
+          "tokens": 1
+        },
+        {
+          "at_ms": 190,
+          "tokens": 1
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "scheduled_ms": 60,
+      "sent_ms": 60,
+      "done_ms": 230,
+      "success": true,
+      "prompt_tokens": 128,
+      "chunks": [
+        {
+          "at_ms": 210,
+          "tokens": 1
+        }
+      ]
+    },
+    {
+      "id": "E",
+      "scheduled_ms": 80,
+      "sent_ms": 80,
+      "done_ms": 500,
+      "success": false,
+      "prompt_tokens": 128,
+      "chunks": []
+    }
+  ]
+}

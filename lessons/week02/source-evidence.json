@@ -1,0 +1,34 @@
+{
+  "observed_on": "2026-10-07",
+  "scope": "Selected reading files only; not a complete upstream version lock",
+  "files": [
+    {
+      "project": "vllm",
+      "relative_root": "../vllm-main",
+      "file": "vllm/benchmarks/serve.py",
+      "sha256": "fd89ae7cb00593d8e9dd2e2c2bd09c3a6b863b2af2dde77163e6abe6f1d5707e",
+      "upstream_commit": null
+    },
+    {
+      "project": "vllm",
+      "relative_root": "../vllm-main",
+      "file": "vllm/benchmarks/lib/endpoint_request_func.py",
+      "sha256": "9206197db360e0cb7500310f9c2de76473ca7239031f92401b1d68b32eb9b39b",
+      "upstream_commit": null
+    },
+    {
+      "project": "vllm",
+      "relative_root": "../vllm-main",
+      "file": "docs/benchmarking/cli.md",
+      "sha256": "dc00a45d45185ae8111a81210003314ba7a2ace2212bf5b73805f3fbb90ade06",
+      "upstream_commit": null
+    },
+    {
+      "project": "zero-to-sglang",
+      "relative_root": "../zero-to-sglang-main",
+      "file": "course-material/ch/part1/第5章_Benchmark入门.md",
+      "sha256": "5e8c02ee5ba5bcf7d64008de018b60abf663bcac26cb2da4a193270c1639fd85",
+      "upstream_commit": null
+    }
+  ]
+}

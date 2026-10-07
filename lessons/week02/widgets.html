@@ -1,0 +1,26 @@
+<!-- roofline:start -->
+<section class="widget" aria-labelledby="roof-title"><div class="widget-kicker">交互 01 / Roofline 计算台</div><h3 id="roof-title">先预测：加算力还是加带宽？</h3>
+<p>单个线性层，K=N=4096、2-byte 元素，一次读写模型。控件中的硬件都是假设。</p>
+<div class="controls"><label for="roof-m">Token 行数 M<select id="roof-m"><option>1</option><option>8</option><option>32</option><option>128</option><option>512</option><option>2048</option></select></label>
+<label for="roof-peak">计算峰值 / TFLOP/s<select id="roof-peak"><option>100</option><option selected>200</option><option>400</option></select></label><label for="roof-bw">HBM 带宽 / GB/s<select id="roof-bw"><option>750</option><option selected>1500</option><option>3000</option></select></label></div>
+<div id="roof-stats" class="stats" aria-live="polite"></div><div id="roof-chart"></div><p id="roof-explain" class="widget-note"></p></section>
+<!-- roofline:end -->
+<!-- queue:start -->
+<section class="widget" aria-labelledby="queue-title"><div class="widget-kicker">交互 02 / 排队放大镜</div><h3 id="queue-title">服务没变慢，为什么请求等得越来越久？</h3>
+<p>解析教学模型 M/M/1：固定 μ=200 请求/s，平均服务 5 ms，无限队列。不是推理引擎模拟。</p>
+<label for="queue-rate">到达率 λ <output id="queue-rate-label">180 请求/s</output><input id="queue-rate" type="range" min="20" max="220" step="10" value="180"></label>
+<div id="queue-stats" class="stats" aria-live="polite"></div><div id="queue-chart"></div><p id="queue-explain" class="widget-note"></p></section>
+<!-- queue:end -->
+<!-- metrics:start -->
+<section class="widget" aria-labelledby="metric-title"><div class="widget-kicker">交互 03 / 指标不等于体验</div><h3 id="metric-title">把一次停顿藏进平均值</h3>
+<div class="controls"><label for="metric-mode">构造案例<select id="metric-mode"><option value="stall">A：四次单 token 输出</option><option value="bundle">合并流块：1、2、3 个 token</option><option value="single">只输出一个 token</option></select></label></div>
+<label for="metric-gap">A 的最后一次间隔 <output id="metric-gap-label">200 ms</output><input id="metric-gap" type="range" min="20" max="400" step="20" value="200"></label>
+<div id="metric-stats" class="stats four" aria-live="polite"></div><div id="metric-chart"></div><p id="metric-explain" class="widget-note"></p></section>
+<!-- metrics:end -->
+<!-- transfer:start -->
+<section class="widget" aria-labelledby="transfer-title"><div class="widget-kicker">交互 04 / KV 搬运账本</div><h3 id="transfer-title">同样的容量，换条路径会怎样？</h3>
+<p>固定 L=32、Hkv=8、d=128、2-byte KV、无共享。每块串行开销假设为 40 μs。</p>
+<div class="controls"><label for="transfer-batch">请求数<select id="transfer-batch"><option>1</option><option>8</option><option>16</option></select></label><label for="transfer-context">上下文 token<select id="transfer-context"><option>1024</option><option selected>8192</option><option>32768</option></select></label>
+<label for="transfer-bw">路径带宽 / GB/s<select id="transfer-bw"><option>7</option><option selected>25</option><option>50</option></select></label><label for="transfer-chunk">块大小 / MiB<select id="transfer-chunk"><option>0.25</option><option selected>4</option><option>16</option></select></label></div>
+<div id="transfer-stats" class="stats" aria-live="polite"></div><div id="transfer-chart"></div><p id="transfer-explain" class="widget-note"></p></section>
+<!-- transfer:end -->

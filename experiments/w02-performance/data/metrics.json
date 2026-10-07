@@ -1,0 +1,95 @@
+{
+  "evidence_type": "constructed trace; no server benchmark",
+  "window_ms": [
+    0,
+    500
+  ],
+  "offered": 5,
+  "completed": 4,
+  "failed": 1,
+  "request_throughput": 8.0,
+  "output_throughput": 24.0,
+  "total_token_throughput": 1048.0,
+  "mean_request_tpot_ms": 96.66666666666667,
+  "mean_pooled_itl_ms": 60,
+  "p95_pooled_itl_ms": 200,
+  "mean_slo_goodput": 6.0,
+  "gap_slo_goodput": 4.0,
+  "goodput_policy": "TTFT<=150ms AND TPOT<=100ms; extra gap SLO: max ITL<=80ms; single-token TPOT/ITL not applicable",
+  "per_request": [
+    {
+      "id": "A",
+      "success": true,
+      "output_tokens": 4,
+      "client_queue_ms": 20,
+      "ttft_ms": 100,
+      "scheduled_ttft_ms": 120,
+      "e2e_token_ms": 340,
+      "completion_ms": 360,
+      "scheduled_completion_ms": 380,
+      "tpot_ms": 80.0,
+      "itl_ms": [
+        20,
+        20,
+        200
+      ],
+      "max_itl_ms": 200
+    },
+    {
+      "id": "B",
+      "success": true,
+      "output_tokens": 2,
+      "client_queue_ms": 0,
+      "ttft_ms": 100,
+      "scheduled_ttft_ms": 100,
+      "e2e_token_ms": 300,
+      "completion_ms": 320,
+      "scheduled_completion_ms": 320,
+      "tpot_ms": 200.0,
+      "itl_ms": [
+        200
+      ],
+      "max_itl_ms": 200
+    },
+    {
+      "id": "C",
+      "success": true,
+      "output_tokens": 5,
+      "client_queue_ms": 0,
+      "ttft_ms": 100,
+      "scheduled_ttft_ms": 100,
+      "e2e_token_ms": 140,
+      "completion_ms": 160,
+      "scheduled_completion_ms": 160,
+      "tpot_ms": 10.0,
+      "itl_ms": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "max_itl_ms": 10
+    },
+    {
+      "id": "D",
+      "success": true,
+      "output_tokens": 1,
+      "client_queue_ms": 0,
+      "ttft_ms": 150,
+      "scheduled_ttft_ms": 150,
+      "e2e_token_ms": 150,
+      "completion_ms": 170,
+      "scheduled_completion_ms": 170,
+      "tpot_ms": null,
+      "itl_ms": [],
+      "max_itl_ms": null
+    },
+    {
+      "id": "E",
+      "success": false,
+      "output_tokens": 0,
+      "client_queue_ms": 0,
+      "completion_ms": 420
+    }
+  ]
+}

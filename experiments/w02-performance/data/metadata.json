@@ -1,0 +1,30 @@
+{
+  "evidence_type": "formula calculations + constructed traces + FCFS simulation; no GPU/CPU latency measurements",
+  "python": "3.11.0",
+  "seeds": [
+    20261012,
+    20261013,
+    20261014,
+    20261015,
+    20261016
+  ],
+  "quantile": "nearest rank ceil(n*p/100)-1",
+  "queue": {
+    "model": "M/M/1 FCFS, infinite buffer; exponential independent interarrivals/services",
+    "service_rate": 200,
+    "warmup_requests": 2000,
+    "observed_requests_per_run": 10000,
+    "runs": 30,
+    "sample": "first 200 post-warmup requests at rho=0.9, first seed; not the full quantile sample"
+  },
+  "assumed_hardware": {
+    "peak_tflops": 200,
+    "hbm_gbs": 1500,
+    "not_a_real_gpu_spec": true
+  },
+  "code_sha256": {
+    "models.py": "5b01c8b502a74b95e83700936c6059278ef6f868774bc083d8d7571201ff451f",
+    "run.py": "69507334a14535571e219d0945d56a30af59a23649f90de892a22ac153a67c03",
+    "estimate.py": "e3113eb2eddbb67042fd520fe2c78758317ea884b045013bdc9e4dc716009f8e"
+  }
+}

@@ -4,6 +4,7 @@
 
 - 当前阶段：W01，首次学习待开始。
 - 备课产物：[第一周图文教材与交互实验](lessons/week01/README.md)已准备；已纳入 MiniMind / Pyre 旧笔记对照。这是助手备课成果，尚待用户学习验收。
+- 第二周备课：[推理性能分析教材](lessons/week02/README.md)、公式/trace 模拟和[实验协议](experiments/w02-performance/protocol.md)已准备。用户尚未提交第一周验收，学习阶段与实际时长保持待确认。
 - 已确认学习时长：0 / 192 小时。建仓与助手准备时间不计入学习时长。
 - 已通过周验收：0 / 12。
 - 下一次任务：[Transformer 路径与 Q/K/V 张量形状](logs/2026-10-07.md)，预算 2 小时。
