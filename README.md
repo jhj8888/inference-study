@@ -4,6 +4,8 @@
 
 起始日期 **2026-10-07（周三）**；基线结束日期 **2026-12-29（周二）**。当前阶段：**已建档，尚未开始学习**。
 
+远程仓库：[jhj8888/inference-study](https://github.com/jhj8888/inference-study)（私有），学习分支为 codex/study-plan。
+
 ## 从这里开始
 
 - [今天的学习入口](logs/2026-10-07.md)：Transformer 推理路径与 Q/K/V 张量形状，2 小时。

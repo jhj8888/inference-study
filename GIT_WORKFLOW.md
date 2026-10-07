@@ -14,13 +14,20 @@ git diff
 git add -- logs/2026-10-07.md PROGRESS.md
 git diff --cached
 git commit -m "study(w01): record transformer shape exercise"
+git push
 ```
 
 实验提交同时带上运行命令、版本、配置、随机种子、单位和小型结果。大模型、环境目录、大型 trace 与原始性能采样不入库；对外部数据保留来源、校验和与重建/获取步骤。小型脱敏 trace 可按需放在 experiments/ 对应目录。
 
 ## 远程仓库
 
-当前没有远程地址，也未推送。以后提供个人远程仓库 URL 再配置 origin，并将当前分支推送到该地址。若远程已有历史，先检查并选择合并方式，不覆盖已有提交。
+远程仓库：[jhj8888/inference-study](https://github.com/jhj8888/inference-study)，可见性为私有。
+
+- origin：https://github.com/jhj8888/inference-study.git
+- 当前学习分支：codex/study-plan。
+- 首次推送使用 git push -u origin codex/study-plan 建立追踪关系，此后可直接 git push。
+- GitHub 登录通过 Git Credential Manager 设备授权完成；密码和访问令牌不写入仓库或远程 URL。
+- 多台机器协作时先检查远程历史，解决差异后再推送，不覆盖已有提交。
 
 ## 分支与复现
 
