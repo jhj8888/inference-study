@@ -1,0 +1,457 @@
+{
+  "snapshot_identity": "vllm-local-2026-10-07",
+  "archive_sha256": "2206fef40dab95f56279053ce516a9f012c2feac43ee64dd7a403711844c5029",
+  "method": "Static source inspection, not an engine execution trace.",
+  "anchors": [
+    {
+      "id": "S01",
+      "file": "vllm/entrypoints/openai/chat_completion/api_router.py",
+      "symbol": "create_chat_completion",
+      "start": 54,
+      "end": 80,
+      "evidence_line": 62,
+      "evidence_text": "generator = await handler.create_chat_completion(request, raw_request)",
+      "file_sha256": "77f858fe0079b9dd131c26d22641c79d4ac0f2b22688d033863954a8a669d7d3"
+    },
+    {
+      "id": "S02",
+      "file": "vllm/entrypoints/openai/chat_completion/serving.py",
+      "symbol": "OpenAIServingChat._create_chat_completion",
+      "start": 259,
+      "end": 416,
+      "evidence_line": 369,
+      "evidence_text": "generator = self.engine_client.generate(",
+      "file_sha256": "5ca2874dabfbdfd072a78ac0f1db68b091c3030ca0d4d6ec85f691bc500faf04"
+    },
+    {
+      "id": "S03",
+      "file": "vllm/entrypoints/openai/chat_completion/serving.py",
+      "symbol": "OpenAIServingChat.render_chat_request",
+      "start": 221,
+      "end": 242,
+      "evidence_line": 242,
+      "evidence_text": "return await self.online_renderer.render_chat(request)",
+      "file_sha256": "5ca2874dabfbdfd072a78ac0f1db68b091c3030ca0d4d6ec85f691bc500faf04"
+    },
+    {
+      "id": "S04",
+      "file": "vllm/v1/engine/async_llm.py",
+      "symbol": "AsyncLLM.generate",
+      "start": 664,
+      "end": 789,
+      "evidence_line": 711,
+      "evidence_text": "q = await self.add_request(",
+      "file_sha256": "7f5289824db2a0d0f4cb93bff082b11020a157cf59258c3bbfa8a35332a2d8d0"
+    },
+    {
+      "id": "S05",
+      "file": "vllm/v1/engine/async_llm.py",
+      "symbol": "AsyncLLM.add_request",
+      "start": 372,
+      "end": 529,
+      "evidence_line": 447,
+      "evidence_text": "request = self.input_processor.process_inputs(",
+      "file_sha256": "7f5289824db2a0d0f4cb93bff082b11020a157cf59258c3bbfa8a35332a2d8d0"
+    },
+    {
+      "id": "S06",
+      "file": "vllm/v1/engine/async_llm.py",
+      "symbol": "AsyncLLM._add_request",
+      "start": 531,
+      "end": 551,
+      "evidence_line": 548,
+      "evidence_text": "await self.engine_core.add_request_async(request)",
+      "file_sha256": "7f5289824db2a0d0f4cb93bff082b11020a157cf59258c3bbfa8a35332a2d8d0"
+    },
+    {
+      "id": "S07",
+      "file": "vllm/v1/engine/core_client.py",
+      "symbol": "AsyncMPClient.add_request_async",
+      "start": 1253,
+      "end": 1256,
+      "evidence_line": 1255,
+      "evidence_text": "await self._send_input(EngineCoreRequestType.ADD, request)",
+      "file_sha256": "3f074f6ea25ce43dcaa58fae8ad47d79a8cf28faab63a29bcdc86e376b82ee08"
+    },
+    {
+      "id": "S08",
+      "file": "vllm/v1/engine/core_client.py",
+      "symbol": "AsyncMPClient._send_input_message",
+      "start": 1224,
+      "end": 1231,
+      "evidence_line": 1231,
+      "evidence_text": "return self.input_socket.send_multipart((engine,) + message, copy=False)",
+      "file_sha256": "3f074f6ea25ce43dcaa58fae8ad47d79a8cf28faab63a29bcdc86e376b82ee08"
+    },
+    {
+      "id": "S09",
+      "file": "vllm/v1/engine/core.py",
+      "symbol": "EngineCoreProc.process_input_sockets",
+      "start": 1754,
+      "end": 1854,
+      "evidence_line": 1826,
+      "evidence_text": "request = self.preprocess_add_request(req)",
+      "file_sha256": "82d27ffb92e2d1b5f91d03800cb92d4edb67277ee10563341c60b515480214ad"
+    },
+    {
+      "id": "S10",
+      "file": "vllm/v1/engine/core.py",
+      "symbol": "EngineCore.preprocess_add_request",
+      "start": 1049,
+      "end": 1071,
+      "evidence_line": 1063,
+      "evidence_text": "req = Request.from_engine_core_request(request, self.request_block_hasher)",
+      "file_sha256": "82d27ffb92e2d1b5f91d03800cb92d4edb67277ee10563341c60b515480214ad"
+    },
+    {
+      "id": "S11",
+      "file": "vllm/v1/engine/core.py",
+      "symbol": "EngineCoreProc._handle_client_request",
+      "start": 1597,
+      "end": 1629,
+      "evidence_line": 1607,
+      "evidence_text": "self.add_request(req, request_wave)",
+      "file_sha256": "82d27ffb92e2d1b5f91d03800cb92d4edb67277ee10563341c60b515480214ad"
+    },
+    {
+      "id": "S12",
+      "file": "vllm/v1/engine/core.py",
+      "symbol": "EngineCore.add_request",
+      "start": 489,
+      "end": 533,
+      "evidence_line": 529,
+      "evidence_text": "self.scheduler.add_request(request)",
+      "file_sha256": "82d27ffb92e2d1b5f91d03800cb92d4edb67277ee10563341c60b515480214ad"
+    },
+    {
+      "id": "S13",
+      "file": "vllm/v1/core/sched/scheduler.py",
+      "symbol": "Scheduler.add_request",
+      "start": 2473,
+      "end": 2499,
+      "evidence_line": 2490,
+      "evidence_text": "self._enqueue_waiting_request(request)",
+      "file_sha256": "b956bc2d88f803edf0ba87918cafdaeb6ddb72cd5b85d1872c88fef6aa6bdfb3"
+    },
+    {
+      "id": "S14",
+      "file": "vllm/v1/core/sched/scheduler.py",
+      "symbol": "Scheduler.schedule",
+      "start": 553,
+      "end": 1505,
+      "evidence_line": 730,
+      "evidence_text": "new_blocks = self.kv_cache_manager.allocate_slots(",
+      "file_sha256": "b956bc2d88f803edf0ba87918cafdaeb6ddb72cd5b85d1872c88fef6aa6bdfb3"
+    },
+    {
+      "id": "S15",
+      "file": "vllm/v1/core/sched/scheduler.py",
+      "symbol": "Scheduler._update_after_schedule",
+      "start": 1571,
+      "end": 1603,
+      "evidence_line": 1584,
+      "evidence_text": "request.num_computed_tokens += num_scheduled_token",
+      "file_sha256": "b956bc2d88f803edf0ba87918cafdaeb6ddb72cd5b85d1872c88fef6aa6bdfb3"
+    },
+    {
+      "id": "S16",
+      "file": "vllm/v1/engine/core.py",
+      "symbol": "EngineCore.step",
+      "start": 633,
+      "end": 662,
+      "evidence_line": 657,
+      "evidence_text": "engine_core_outputs = self.scheduler.update_from_output(",
+      "file_sha256": "82d27ffb92e2d1b5f91d03800cb92d4edb67277ee10563341c60b515480214ad"
+    },
+    {
+      "id": "S17",
+      "file": "vllm/v1/executor/uniproc_executor.py",
+      "symbol": "UniProcExecutor.execute_model",
+      "start": 119,
+      "end": 132,
+      "evidence_line": 122,
+      "evidence_text": "output = self.collective_rpc(",
+      "file_sha256": "3cb039b80fe9b03dc1122f93c1f8a4098ef1355104b317ff6df25358f4349494"
+    },
+    {
+      "id": "S18",
+      "file": "vllm/v1/executor/uniproc_executor.py",
+      "symbol": "UniProcExecutor.collective_rpc",
+      "start": 90,
+      "end": 117,
+      "evidence_line": 103,
+      "evidence_text": "result = run_method(self.driver_worker, method, args, kwargs)",
+      "file_sha256": "3cb039b80fe9b03dc1122f93c1f8a4098ef1355104b317ff6df25358f4349494"
+    },
+    {
+      "id": "S19",
+      "file": "vllm/v1/worker/gpu_worker.py",
+      "symbol": "Worker.execute_model",
+      "start": 1152,
+      "end": 1246,
+      "evidence_line": 1213,
+      "evidence_text": "output = self.model_runner.execute_model(",
+      "file_sha256": "4fcae3758e2aef7414be7899dd6650613509e34877fcf5ca8c4f68e1202adf62"
+    },
+    {
+      "id": "S20",
+      "file": "vllm/v1/worker/gpu_model_runner.py",
+      "symbol": "GPUModelRunner.execute_model",
+      "start": 4149,
+      "end": 4512,
+      "evidence_line": 4231,
+      "evidence_text": "self._prepare_inputs(scheduler_output, num_scheduled_tokens_np)",
+      "file_sha256": "95dbd301feae580913938cafe4151da7af2cbd5d3f37fa645fab62a8cd1b54ef"
+    },
+    {
+      "id": "S21",
+      "file": "vllm/v1/worker/gpu_model_runner.py",
+      "symbol": "GPUModelRunner.sample_tokens",
+      "start": 4530,
+      "end": 4785,
+      "evidence_line": 4557,
+      "evidence_text": "self.execute_model_state = None",
+      "file_sha256": "95dbd301feae580913938cafe4151da7af2cbd5d3f37fa645fab62a8cd1b54ef"
+    },
+    {
+      "id": "S22",
+      "file": "vllm/v1/core/sched/scheduler.py",
+      "symbol": "Scheduler.update_from_output",
+      "start": 1906,
+      "end": 2294,
+      "evidence_line": 2098,
+      "evidence_text": "kv_transfer_params, ec_transfer_params = self._free_request(request)",
+      "file_sha256": "b956bc2d88f803edf0ba87918cafdaeb6ddb72cd5b85d1872c88fef6aa6bdfb3"
+    },
+    {
+      "id": "S23",
+      "file": "vllm/v1/core/sched/utils.py",
+      "symbol": "check_stop",
+      "start": 98,
+      "end": 140,
+      "evidence_line": 118,
+      "evidence_text": "request.status = RequestStatus.FINISHED_LENGTH_CAPPED",
+      "file_sha256": "b6583424b6da15000545cd926ec887ee591bae8a56e6734b8ddf8f9e8f90cc4b"
+    },
+    {
+      "id": "S24",
+      "file": "vllm/v1/engine/core.py",
+      "symbol": "EngineCoreProc.process_output_sockets",
+      "start": 1856,
+      "end": 1922,
+      "evidence_line": 1904,
+      "evidence_text": "coord_socket.send_multipart(encoder.encode(outputs))",
+      "file_sha256": "82d27ffb92e2d1b5f91d03800cb92d4edb67277ee10563341c60b515480214ad"
+    },
+    {
+      "id": "S25",
+      "file": "vllm/v1/engine/core_client.py",
+      "symbol": "AsyncMPClient.get_output_async",
+      "start": 1201,
+      "end": 1210,
+      "evidence_line": 1207,
+      "evidence_text": "outputs = await self.outputs_queue.get()",
+      "file_sha256": "3f074f6ea25ce43dcaa58fae8ad47d79a8cf28faab63a29bcdc86e376b82ee08"
+    },
+    {
+      "id": "S26",
+      "file": "vllm/v1/engine/async_llm.py",
+      "symbol": "AsyncLLM._run_output_handler",
+      "start": 791,
+      "end": 872,
+      "evidence_line": 830,
+      "evidence_text": "processed_outputs = output_processor.process_outputs(",
+      "file_sha256": "7f5289824db2a0d0f4cb93bff082b11020a157cf59258c3bbfa8a35332a2d8d0"
+    },
+    {
+      "id": "S27",
+      "file": "vllm/v1/engine/output_processor.py",
+      "symbol": "OutputProcessor.process_outputs",
+      "start": 641,
+      "end": 770,
+      "evidence_line": 740,
+      "evidence_text": "req_state.queue.put(request_output)",
+      "file_sha256": "f3a2d29d3a068eccd0792a662500974356d22c389013aace32f98ce0886b8523"
+    },
+    {
+      "id": "S28",
+      "file": "vllm/entrypoints/openai/chat_completion/serving.py",
+      "symbol": "OpenAIServingChat.chat_completion_stream_generator",
+      "start": 451,
+      "end": 911,
+      "evidence_line": 517,
+      "evidence_text": "async for res in result_generator:",
+      "file_sha256": "5ca2874dabfbdfd072a78ac0f1db68b091c3030ca0d4d6ec85f691bc500faf04"
+    },
+    {
+      "id": "S29",
+      "file": "vllm/v1/engine/async_llm.py",
+      "symbol": "AsyncLLM.abort",
+      "start": 874,
+      "end": 885,
+      "evidence_line": 882,
+      "evidence_text": "await self.engine_core.abort_requests_async(all_request_ids)",
+      "file_sha256": "7f5289824db2a0d0f4cb93bff082b11020a157cf59258c3bbfa8a35332a2d8d0"
+    },
+    {
+      "id": "S30",
+      "file": "vllm/v1/engine/core.py",
+      "symbol": "EngineCore.abort_requests",
+      "start": 535,
+      "end": 540,
+      "evidence_line": 540,
+      "evidence_text": "self.scheduler.finish_requests(request_ids, RequestStatus.FINISHED_ABORTED)",
+      "file_sha256": "82d27ffb92e2d1b5f91d03800cb92d4edb67277ee10563341c60b515480214ad"
+    },
+    {
+      "id": "S31",
+      "file": "vllm/v1/core/sched/scheduler.py",
+      "symbol": "Scheduler.finish_requests",
+      "start": 2501,
+      "end": 2563,
+      "evidence_line": 2561,
+      "evidence_text": "self._free_request(request, delay_free_blocks=delay_free_blocks)",
+      "file_sha256": "b956bc2d88f803edf0ba87918cafdaeb6ddb72cd5b85d1872c88fef6aa6bdfb3"
+    },
+    {
+      "id": "S32",
+      "file": "vllm/v1/core/sched/scheduler.py",
+      "symbol": "Scheduler._free_request",
+      "start": 2565,
+      "end": 2594,
+      "evidence_line": 2592,
+      "evidence_text": "self._free_blocks(request)",
+      "file_sha256": "b956bc2d88f803edf0ba87918cafdaeb6ddb72cd5b85d1872c88fef6aa6bdfb3"
+    },
+    {
+      "id": "S33",
+      "file": "vllm/v1/core/sched/scheduler.py",
+      "symbol": "Scheduler._free_request_blocks",
+      "start": 2616,
+      "end": 2625,
+      "evidence_line": 2621,
+      "evidence_text": "self.kv_cache_manager.free(request)",
+      "file_sha256": "b956bc2d88f803edf0ba87918cafdaeb6ddb72cd5b85d1872c88fef6aa6bdfb3"
+    },
+    {
+      "id": "S34",
+      "file": "vllm/v1/core/kv_cache_manager.py",
+      "symbol": "KVCacheManager.free",
+      "start": 610,
+      "end": 619,
+      "evidence_line": 619,
+      "evidence_text": "self.coordinator.free(request.request_id)",
+      "file_sha256": "6c1c13c4147408dc4b45d6970f19ee609ac2206194817f4a046ae03715f4c7e2"
+    },
+    {
+      "id": "S35",
+      "file": "vllm/v1/core/kv_cache_coordinator.py",
+      "symbol": "KVCacheCoordinator.free",
+      "start": 380,
+      "end": 388,
+      "evidence_line": 388,
+      "evidence_text": "manager.free(request_id)",
+      "file_sha256": "7fa4065d19021e77b3424d24e1b088c530ed70b90c5ed9bc52cf4b7581d5fc48"
+    },
+    {
+      "id": "S36",
+      "file": "vllm/v1/core/single_type_kv_cache_manager.py",
+      "symbol": "SingleTypeKVCacheManager.free",
+      "start": 578,
+      "end": 586,
+      "evidence_line": 586,
+      "evidence_text": "self.block_pool.free_blocks(reversed(self.pop_blocks_for_free(request_id)))",
+      "file_sha256": "6ebd4ddb5210d500b52b300dfaf462e2e92f58a4ee0e15691a860549dc086d68"
+    },
+    {
+      "id": "S37",
+      "file": "vllm/v1/core/block_pool.py",
+      "symbol": "BlockPool.free_blocks",
+      "start": 768,
+      "end": 799,
+      "evidence_line": 785,
+      "evidence_text": "block.ref_cnt -= 1",
+      "file_sha256": "35b8427b6144b8cf7662ad5a5a14c0c3051e3542c4c196a920dc99d093c4499d"
+    },
+    {
+      "id": "S38",
+      "file": "vllm/v1/core/sched/scheduler.py",
+      "symbol": "Scheduler._preempt_request",
+      "start": 1526,
+      "end": 1569,
+      "evidence_line": 1568,
+      "evidence_text": "self.waiting.prepend_request(request)",
+      "file_sha256": "b956bc2d88f803edf0ba87918cafdaeb6ddb72cd5b85d1872c88fef6aa6bdfb3"
+    },
+    {
+      "id": "S39",
+      "file": "vllm/v1/core/kv_cache_manager.py",
+      "symbol": "KVCacheManager.allocate_slots",
+      "start": 371,
+      "end": 608,
+      "evidence_line": 568,
+      "evidence_text": "if required_blocks > available_blocks:",
+      "file_sha256": "6c1c13c4147408dc4b45d6970f19ee609ac2206194817f4a046ae03715f4c7e2"
+    },
+    {
+      "id": "S40",
+      "file": "vllm/v1/request.py",
+      "symbol": "RequestStatus",
+      "start": 370,
+      "end": 397,
+      "evidence_line": 383,
+      "evidence_text": "FINISHED_ABORTED = enum.auto()",
+      "file_sha256": "dd7c30bf8b0894dc123a739c299c0133566f8cc075b081e45905f1c29506e69d"
+    },
+    {
+      "id": "S41",
+      "file": "vllm/v1/core/sched/output.py",
+      "symbol": "SchedulerOutput",
+      "start": 232,
+      "end": 329,
+      "evidence_line": 244,
+      "evidence_text": "num_scheduled_tokens: dict[str, int]",
+      "file_sha256": "972e0bc8e7af1f4262ac73f660f6b8f798ba780f86c031a9c8a7f10cbfaad3a8"
+    },
+    {
+      "id": "S42",
+      "file": "vllm/v1/engine/input_processor.py",
+      "symbol": "InputProcessor.process_inputs",
+      "start": 308,
+      "end": 467,
+      "evidence_line": 450,
+      "evidence_text": "return EngineCoreRequest(",
+      "file_sha256": "37ee2bbe873b39cec681f49ae7a45e9ab612f471b649e8252c8cddc9f09f2503"
+    },
+    {
+      "id": "S43",
+      "file": "vllm/entrypoints/serve/utils/api_utils.py",
+      "symbol": "with_cancellation",
+      "start": 51,
+      "end": 93,
+      "evidence_line": 80,
+      "evidence_text": "handler_task = asyncio.create_task(handler_func(*args, **kwargs))",
+      "file_sha256": "ffb5e08c2b6cf6d0402c6ba31d0d05e53eb7e9e8c13b29700e84a4bfada420ba"
+    },
+    {
+      "id": "S44",
+      "file": "vllm/v1/engine/core.py",
+      "symbol": "EngineCoreProc._process_engine_step",
+      "start": 1526,
+      "end": 1542,
+      "evidence_line": 1529,
+      "evidence_text": "outputs, model_executed = self.step_fn()",
+      "file_sha256": "82d27ffb92e2d1b5f91d03800cb92d4edb67277ee10563341c60b515480214ad"
+    },
+    {
+      "id": "S45",
+      "file": "vllm/v1/core/sched/scheduler.py",
+      "symbol": "Scheduler._update_request_with_output",
+      "start": 2350,
+      "end": 2367,
+      "evidence_line": 2363,
+      "evidence_text": "stopped = check_stop(request, self.max_model_len)",
+      "file_sha256": "b956bc2d88f803edf0ba87918cafdaeb6ddb72cd5b85d1872c88fef6aa6bdfb3"
+    }
+  ]
+}

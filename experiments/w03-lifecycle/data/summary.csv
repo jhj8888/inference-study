@@ -1,0 +1,7 @@
+scenario,status,steps,input_positions,output_tokens,peak_blocks
+baseline,COMPLETE,4,15,6,5
+budget2,COMPLETE,8,15,6,4
+serial,COMPLETE,7,15,6,3
+wide,COMPLETE,3,15,6,8
+cancel,COMPLETE,4,13,4,4
+blocked,BLOCKED_NO_PREEMPTION,2,4,1,2

@@ -10,7 +10,7 @@
 
 - [第一周图文教材](lessons/week01/README.md)与[离线交互版](lessons/week01/index.html)：7 张图、3 个交互演示、CPU 正确性实验、练习和答案。
 - [第二周推理性能分析](lessons/week02/README.md)与[离线交互版](lessons/week02/index.html)：7 张图、4 个交互实验、估算脚本与[实验协议](experiments/w02-performance/protocol.md)。
-- [第三周 vLLM 资料阅读导航](sources/w03-reading-route.md)：中文源码导读、英文教程与本地 V1 源码的每日对应关系及版本差异提示。
+- [第三周 vLLM 请求生命周期教材](lessons/week03/README.md)与[离线交互版](lessons/week03/index.html)：6 张图解、3 个交互演示、完整本地源码快照、45 个源码锚点与三请求模拟；附[资料阅读导航](sources/w03-reading-route.md)。
 - [衔接已有 MiniMind / Pyre 笔记](lessons/week01/prior-notes.md)：按已有内容选择复习入口。
 - [今天的学习入口](logs/2026-10-07.md)：Transformer 推理路径与 Q/K/V 张量形状，2 小时。
 - [当前进度](PROGRESS.md)：实际完成情况、卡点、下一次任务。
@@ -40,6 +40,6 @@
 | sources/ | 源码位置、入口及所选文件的 SHA-256 基线 |
 | scripts/ | 源码指纹记录与核验工具 |
 
-源码仍放在原目录，本仓库保存学习产物和引用信息。所选入口文件已留存指纹；上游提交号尚未确认。详见源码导航中的覆盖范围说明。
+源码仍放在原目录，本仓库保存学习产物和引用信息。vLLM 已额外保存完整本地归档与锁文件；归档被 Git 忽略，需单独备份。其他源码目前只留选定入口指纹，上游提交号尚未确认。详见源码导航中的覆盖范围说明。
 
 预算合计：启动周 12 小时 + 11 个完整周 × 16 小时 + 最后两个工作日 × 2 小时 = **192 小时**。未通过验收则补基础并调整后续日期。

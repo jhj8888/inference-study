@@ -48,7 +48,9 @@ LMCache 的设计文档规则要求先查 docs/design/ 中对应模块路径；�
 
 已检查的 8 个资料/源码根目录（zero-to-sglang 导读、mini-sglang、SGLang、vLLM、两份 vLLM 教程、LMCache、Mooncake）均无顶层 .git，因此各目录实际上游提交号记为 null（未知），不从目录名 main/dev 推断版本。中文 vLLM 手册在 source.lock.json 声明的被讲解源码版本单独记在 W03 阅读导航中，它不等于本地 vllm-main 的已验证提交号。
 
-当前基线为 [baseline-2026-10-07-w03-guides.json](baseline-2026-10-07-w03-guides.json)，覆盖新增教程和扩充后的 vLLM 阅读入口；原 baseline-2026-10-07.json 保留不变，代表最初 6 项资料的选定文件。基线只记录选定入口文件的 SHA-256 与字节数，可以判断这些文件以后是否变化。它不能证明其他文件没变，也不能凭哈希恢复源码。当前完整源码版本锁定仍为待办。
+当前入口基线为 [baseline-2026-10-07-w03-guides.json](baseline-2026-10-07-w03-guides.json)，覆盖新增教程和扩充后的 vLLM 阅读入口；原 baseline-2026-10-07.json 保留不变，代表最初 6 项资料的选定文件。入口基线只记录选定文件的 SHA-256 与字节数，不能证明其他文件没变，也不能凭哈希恢复源码。
+
+**vLLM 已完成完整本地内容锁定**：归档 `artifacts/raw/vllm-local-2026-10-07.zip`，对应[逐文件锁记录](vllm-local-2026-10-07.lock.json)，覆盖 7,289 个文件和全部目录。归档与当前原目录已逐项核验；上游 commit 和最初下载时间仍未知。归档被 Git 忽略，换电脑须单独复制。第三周教材的静态源码结论对应这份本地快照；其他项目完整版本锁定仍为待办。
 
 进入 W03、正式调用链分析或性能实验前：
 
@@ -62,6 +64,12 @@ LMCache 的设计文档规则要求先查 docs/design/ 中对应模块路径；�
 在学习仓库根目录执行（只用 Python 标准库）：
 
     py -3.11 scripts/source_snapshot.py verify
+
+第三周完整 vLLM 快照核验另执行：
+
+    py -3.11 scripts/full_source_snapshot.py verify
+
+它同时核对归档 SHA、归档中的全部文件以及原目录清单/字节；并非只检查入口文件。
 
 默认对照当前 W03 扩充基线。旧基线与当前 catalog 的项目及文件集合不同，直接用它核验当前 catalog 会报告差异；回查历史时应使用同一次 Git 提交中的 catalog、脚本及基线。
 

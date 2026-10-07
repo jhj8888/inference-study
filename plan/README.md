@@ -73,7 +73,7 @@
 
 基线日期：2026-10-19 至 2026-10-25。
 
-资料入口：[第三周 vLLM 阅读导航](../sources/w03-reading-route.md)。以中文导读搭建源码主线，英文教程补充接口与运行示例；先核对版本，再对照本地 V1 实现。
+教材入口：[第三周图文讲义](../lessons/week03/README.md)与[离线交互版](../lessons/week03/index.html)。[资料阅读导航](../sources/w03-reading-route.md)衔接两份教程与本地 V1 实现；本地完整源码快照已保存，开课时先核验版本。
 
 - 周一：固定源码版本，识别 API、Engine Core、Worker
 - 周二：追踪请求入队与状态变化

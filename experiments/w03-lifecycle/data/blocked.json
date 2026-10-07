@@ -1,0 +1,243 @@
+{
+  "kind": "teaching_simulation_not_vllm_measurement",
+  "status": "BLOCKED_NO_PREEMPTION",
+  "config": {
+    "budget": 4,
+    "max_running": 2,
+    "block_size": 2,
+    "capacity": 2,
+    "cancel_b": false
+  },
+  "trace": [
+    {
+      "step": 0,
+      "plans": {
+        "A": 4
+      },
+      "outputs": [
+        "A"
+      ],
+      "before": [
+        {
+          "name": "A",
+          "prompt": 4,
+          "target": 2,
+          "arrival": 0,
+          "computed": 0,
+          "emitted": 0,
+          "state": "WAITING",
+          "blocks": 0,
+          "first_output": null,
+          "finish": null
+        },
+        {
+          "name": "B",
+          "prompt": 2,
+          "target": 3,
+          "arrival": 0,
+          "computed": 0,
+          "emitted": 0,
+          "state": "WAITING",
+          "blocks": 0,
+          "first_output": null,
+          "finish": null
+        },
+        {
+          "name": "C",
+          "prompt": 6,
+          "target": 1,
+          "arrival": 1,
+          "computed": 0,
+          "emitted": 0,
+          "state": "NOT_ARRIVED",
+          "blocks": 0,
+          "first_output": null,
+          "finish": null
+        }
+      ],
+      "after": [
+        {
+          "name": "A",
+          "prompt": 4,
+          "target": 2,
+          "arrival": 0,
+          "computed": 4,
+          "emitted": 1,
+          "state": "RUNNING",
+          "blocks": 2,
+          "first_output": 1,
+          "finish": null
+        },
+        {
+          "name": "B",
+          "prompt": 2,
+          "target": 3,
+          "arrival": 0,
+          "computed": 0,
+          "emitted": 0,
+          "state": "WAITING",
+          "blocks": 0,
+          "first_output": null,
+          "finish": null
+        },
+        {
+          "name": "C",
+          "prompt": 6,
+          "target": 1,
+          "arrival": 1,
+          "computed": 0,
+          "emitted": 0,
+          "state": "NOT_ARRIVED",
+          "blocks": 0,
+          "first_output": null,
+          "finish": null
+        }
+      ],
+      "running_after": [
+        "A"
+      ],
+      "waiting_after": [
+        "B"
+      ],
+      "peak_blocks": 2,
+      "used_after": 2,
+      "events": [
+        "A:arrive",
+        "B:arrive"
+      ]
+    },
+    {
+      "step": 1,
+      "plans": {},
+      "outputs": [],
+      "before": [
+        {
+          "name": "A",
+          "prompt": 4,
+          "target": 2,
+          "arrival": 0,
+          "computed": 4,
+          "emitted": 1,
+          "state": "RUNNING",
+          "blocks": 2,
+          "first_output": 1,
+          "finish": null
+        },
+        {
+          "name": "B",
+          "prompt": 2,
+          "target": 3,
+          "arrival": 0,
+          "computed": 0,
+          "emitted": 0,
+          "state": "WAITING",
+          "blocks": 0,
+          "first_output": null,
+          "finish": null
+        },
+        {
+          "name": "C",
+          "prompt": 6,
+          "target": 1,
+          "arrival": 1,
+          "computed": 0,
+          "emitted": 0,
+          "state": "WAITING",
+          "blocks": 0,
+          "first_output": null,
+          "finish": null
+        }
+      ],
+      "after": [
+        {
+          "name": "A",
+          "prompt": 4,
+          "target": 2,
+          "arrival": 0,
+          "computed": 4,
+          "emitted": 1,
+          "state": "RUNNING",
+          "blocks": 2,
+          "first_output": 1,
+          "finish": null
+        },
+        {
+          "name": "B",
+          "prompt": 2,
+          "target": 3,
+          "arrival": 0,
+          "computed": 0,
+          "emitted": 0,
+          "state": "WAITING",
+          "blocks": 0,
+          "first_output": null,
+          "finish": null
+        },
+        {
+          "name": "C",
+          "prompt": 6,
+          "target": 1,
+          "arrival": 1,
+          "computed": 0,
+          "emitted": 0,
+          "state": "WAITING",
+          "blocks": 0,
+          "first_output": null,
+          "finish": null
+        }
+      ],
+      "running_after": [
+        "A"
+      ],
+      "waiting_after": [
+        "B",
+        "C"
+      ],
+      "peak_blocks": 2,
+      "used_after": 2,
+      "events": [
+        "C:arrive",
+        "A:allocation_denied",
+        "B:allocation_denied"
+      ]
+    }
+  ],
+  "requests": [
+    {
+      "name": "A",
+      "prompt": 4,
+      "target": 2,
+      "arrival": 0,
+      "computed": 4,
+      "emitted": 1,
+      "state": "RUNNING",
+      "blocks": 2,
+      "first_output": 1,
+      "finish": null
+    },
+    {
+      "name": "B",
+      "prompt": 2,
+      "target": 3,
+      "arrival": 0,
+      "computed": 0,
+      "emitted": 0,
+      "state": "WAITING",
+      "blocks": 0,
+      "first_output": null,
+      "finish": null
+    },
+    {
+      "name": "C",
+      "prompt": 6,
+      "target": 1,
+      "arrival": 1,
+      "computed": 0,
+      "emitted": 0,
+      "state": "WAITING",
+      "blocks": 0,
+      "first_output": null,
+      "finish": null
+    }
+  ]
+}

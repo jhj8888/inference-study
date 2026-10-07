@@ -1,0 +1,805 @@
+{
+  "kind": "teaching_simulation_not_vllm_measurement",
+  "status": "COMPLETE",
+  "config": {
+    "budget": 2,
+    "max_running": 2,
+    "block_size": 2,
+    "capacity": 8,
+    "cancel_b": false
+  },
+  "trace": [
+    {
+      "step": 0,
+      "plans": {
+        "A": 2
+      },
+      "outputs": [],
+      "before": [
+        {
+          "name": "A",
+          "prompt": 4,
+          "target": 2,
+          "arrival": 0,
+          "computed": 0,
+          "emitted": 0,
+          "state": "WAITING",
+          "blocks": 0,
+          "first_output": null,
+          "finish": null
+        },
+        {
+          "name": "B",
+          "prompt": 2,
+          "target": 3,
+          "arrival": 0,
+          "computed": 0,
+          "emitted": 0,
+          "state": "WAITING",
+          "blocks": 0,
+          "first_output": null,
+          "finish": null
+        },
+        {
+          "name": "C",
+          "prompt": 6,
+          "target": 1,
+          "arrival": 1,
+          "computed": 0,
+          "emitted": 0,
+          "state": "NOT_ARRIVED",
+          "blocks": 0,
+          "first_output": null,
+          "finish": null
+        }
+      ],
+      "after": [
+        {
+          "name": "A",
+          "prompt": 4,
+          "target": 2,
+          "arrival": 0,
+          "computed": 2,
+          "emitted": 0,
+          "state": "RUNNING",
+          "blocks": 1,
+          "first_output": null,
+          "finish": null
+        },
+        {
+          "name": "B",
+          "prompt": 2,
+          "target": 3,
+          "arrival": 0,
+          "computed": 0,
+          "emitted": 0,
+          "state": "WAITING",
+          "blocks": 0,
+          "first_output": null,
+          "finish": null
+        },
+        {
+          "name": "C",
+          "prompt": 6,
+          "target": 1,
+          "arrival": 1,
+          "computed": 0,
+          "emitted": 0,
+          "state": "NOT_ARRIVED",
+          "blocks": 0,
+          "first_output": null,
+          "finish": null
+        }
+      ],
+      "running_after": [
+        "A"
+      ],
+      "waiting_after": [
+        "B"
+      ],
+      "peak_blocks": 1,
+      "used_after": 1,
+      "events": [
+        "A:arrive",
+        "B:arrive"
+      ]
+    },
+    {
+      "step": 1,
+      "plans": {
+        "A": 2
+      },
+      "outputs": [
+        "A"
+      ],
+      "before": [
+        {
+          "name": "A",
+          "prompt": 4,
+          "target": 2,
+          "arrival": 0,
+          "computed": 2,
+          "emitted": 0,
+          "state": "RUNNING",
+          "blocks": 1,
+          "first_output": null,
+          "finish": null
+        },
+        {
+          "name": "B",
+          "prompt": 2,
+          "target": 3,
+          "arrival": 0,
+          "computed": 0,
+          "emitted": 0,
+          "state": "WAITING",
+          "blocks": 0,
+          "first_output": null,
+          "finish": null
+        },
+        {
+          "name": "C",
+          "prompt": 6,
+          "target": 1,
+          "arrival": 1,
+          "computed": 0,
+          "emitted": 0,
+          "state": "WAITING",
+          "blocks": 0,
+          "first_output": null,
+          "finish": null
+        }
+      ],
+      "after": [
+        {
+          "name": "A",
+          "prompt": 4,
+          "target": 2,
+          "arrival": 0,
+          "computed": 4,
+          "emitted": 1,
+          "state": "RUNNING",
+          "blocks": 2,
+          "first_output": 2,
+          "finish": null
+        },
+        {
+          "name": "B",
+          "prompt": 2,
+          "target": 3,
+          "arrival": 0,
+          "computed": 0,
+          "emitted": 0,
+          "state": "WAITING",
+          "blocks": 0,
+          "first_output": null,
+          "finish": null
+        },
+        {
+          "name": "C",
+          "prompt": 6,
+          "target": 1,
+          "arrival": 1,
+          "computed": 0,
+          "emitted": 0,
+          "state": "WAITING",
+          "blocks": 0,
+          "first_output": null,
+          "finish": null
+        }
+      ],
+      "running_after": [
+        "A"
+      ],
+      "waiting_after": [
+        "B",
+        "C"
+      ],
+      "peak_blocks": 2,
+      "used_after": 2,
+      "events": [
+        "C:arrive"
+      ]
+    },
+    {
+      "step": 2,
+      "plans": {
+        "A": 1,
+        "B": 1
+      },
+      "outputs": [
+        "A"
+      ],
+      "before": [
+        {
+          "name": "A",
+          "prompt": 4,
+          "target": 2,
+          "arrival": 0,
+          "computed": 4,
+          "emitted": 1,
+          "state": "RUNNING",
+          "blocks": 2,
+          "first_output": 2,
+          "finish": null
+        },
+        {
+          "name": "B",
+          "prompt": 2,
+          "target": 3,
+          "arrival": 0,
+          "computed": 0,
+          "emitted": 0,
+          "state": "WAITING",
+          "blocks": 0,
+          "first_output": null,
+          "finish": null
+        },
+        {
+          "name": "C",
+          "prompt": 6,
+          "target": 1,
+          "arrival": 1,
+          "computed": 0,
+          "emitted": 0,
+          "state": "WAITING",
+          "blocks": 0,
+          "first_output": null,
+          "finish": null
+        }
+      ],
+      "after": [
+        {
+          "name": "A",
+          "prompt": 4,
+          "target": 2,
+          "arrival": 0,
+          "computed": 5,
+          "emitted": 2,
+          "state": "FINISHED_LENGTH",
+          "blocks": 0,
+          "first_output": 2,
+          "finish": 3
+        },
+        {
+          "name": "B",
+          "prompt": 2,
+          "target": 3,
+          "arrival": 0,
+          "computed": 1,
+          "emitted": 0,
+          "state": "RUNNING",
+          "blocks": 1,
+          "first_output": null,
+          "finish": null
+        },
+        {
+          "name": "C",
+          "prompt": 6,
+          "target": 1,
+          "arrival": 1,
+          "computed": 0,
+          "emitted": 0,
+          "state": "WAITING",
+          "blocks": 0,
+          "first_output": null,
+          "finish": null
+        }
+      ],
+      "running_after": [
+        "B"
+      ],
+      "waiting_after": [
+        "C"
+      ],
+      "peak_blocks": 4,
+      "used_after": 1,
+      "events": [
+        "A:finish"
+      ]
+    },
+    {
+      "step": 3,
+      "plans": {
+        "B": 1,
+        "C": 1
+      },
+      "outputs": [
+        "B"
+      ],
+      "before": [
+        {
+          "name": "A",
+          "prompt": 4,
+          "target": 2,
+          "arrival": 0,
+          "computed": 5,
+          "emitted": 2,
+          "state": "FINISHED_LENGTH",
+          "blocks": 0,
+          "first_output": 2,
+          "finish": 3
+        },
+        {
+          "name": "B",
+          "prompt": 2,
+          "target": 3,
+          "arrival": 0,
+          "computed": 1,
+          "emitted": 0,
+          "state": "RUNNING",
+          "blocks": 1,
+          "first_output": null,
+          "finish": null
+        },
+        {
+          "name": "C",
+          "prompt": 6,
+          "target": 1,
+          "arrival": 1,
+          "computed": 0,
+          "emitted": 0,
+          "state": "WAITING",
+          "blocks": 0,
+          "first_output": null,
+          "finish": null
+        }
+      ],
+      "after": [
+        {
+          "name": "A",
+          "prompt": 4,
+          "target": 2,
+          "arrival": 0,
+          "computed": 5,
+          "emitted": 2,
+          "state": "FINISHED_LENGTH",
+          "blocks": 0,
+          "first_output": 2,
+          "finish": 3
+        },
+        {
+          "name": "B",
+          "prompt": 2,
+          "target": 3,
+          "arrival": 0,
+          "computed": 2,
+          "emitted": 1,
+          "state": "RUNNING",
+          "blocks": 1,
+          "first_output": 4,
+          "finish": null
+        },
+        {
+          "name": "C",
+          "prompt": 6,
+          "target": 1,
+          "arrival": 1,
+          "computed": 1,
+          "emitted": 0,
+          "state": "RUNNING",
+          "blocks": 1,
+          "first_output": null,
+          "finish": null
+        }
+      ],
+      "running_after": [
+        "B",
+        "C"
+      ],
+      "waiting_after": [],
+      "peak_blocks": 2,
+      "used_after": 2,
+      "events": []
+    },
+    {
+      "step": 4,
+      "plans": {
+        "B": 1,
+        "C": 1
+      },
+      "outputs": [
+        "B"
+      ],
+      "before": [
+        {
+          "name": "A",
+          "prompt": 4,
+          "target": 2,
+          "arrival": 0,
+          "computed": 5,
+          "emitted": 2,
+          "state": "FINISHED_LENGTH",
+          "blocks": 0,
+          "first_output": 2,
+          "finish": 3
+        },
+        {
+          "name": "B",
+          "prompt": 2,
+          "target": 3,
+          "arrival": 0,
+          "computed": 2,
+          "emitted": 1,
+          "state": "RUNNING",
+          "blocks": 1,
+          "first_output": 4,
+          "finish": null
+        },
+        {
+          "name": "C",
+          "prompt": 6,
+          "target": 1,
+          "arrival": 1,
+          "computed": 1,
+          "emitted": 0,
+          "state": "RUNNING",
+          "blocks": 1,
+          "first_output": null,
+          "finish": null
+        }
+      ],
+      "after": [
+        {
+          "name": "A",
+          "prompt": 4,
+          "target": 2,
+          "arrival": 0,
+          "computed": 5,
+          "emitted": 2,
+          "state": "FINISHED_LENGTH",
+          "blocks": 0,
+          "first_output": 2,
+          "finish": 3
+        },
+        {
+          "name": "B",
+          "prompt": 2,
+          "target": 3,
+          "arrival": 0,
+          "computed": 3,
+          "emitted": 2,
+          "state": "RUNNING",
+          "blocks": 2,
+          "first_output": 4,
+          "finish": null
+        },
+        {
+          "name": "C",
+          "prompt": 6,
+          "target": 1,
+          "arrival": 1,
+          "computed": 2,
+          "emitted": 0,
+          "state": "RUNNING",
+          "blocks": 1,
+          "first_output": null,
+          "finish": null
+        }
+      ],
+      "running_after": [
+        "B",
+        "C"
+      ],
+      "waiting_after": [],
+      "peak_blocks": 3,
+      "used_after": 3,
+      "events": []
+    },
+    {
+      "step": 5,
+      "plans": {
+        "B": 1,
+        "C": 1
+      },
+      "outputs": [
+        "B"
+      ],
+      "before": [
+        {
+          "name": "A",
+          "prompt": 4,
+          "target": 2,
+          "arrival": 0,
+          "computed": 5,
+          "emitted": 2,
+          "state": "FINISHED_LENGTH",
+          "blocks": 0,
+          "first_output": 2,
+          "finish": 3
+        },
+        {
+          "name": "B",
+          "prompt": 2,
+          "target": 3,
+          "arrival": 0,
+          "computed": 3,
+          "emitted": 2,
+          "state": "RUNNING",
+          "blocks": 2,
+          "first_output": 4,
+          "finish": null
+        },
+        {
+          "name": "C",
+          "prompt": 6,
+          "target": 1,
+          "arrival": 1,
+          "computed": 2,
+          "emitted": 0,
+          "state": "RUNNING",
+          "blocks": 1,
+          "first_output": null,
+          "finish": null
+        }
+      ],
+      "after": [
+        {
+          "name": "A",
+          "prompt": 4,
+          "target": 2,
+          "arrival": 0,
+          "computed": 5,
+          "emitted": 2,
+          "state": "FINISHED_LENGTH",
+          "blocks": 0,
+          "first_output": 2,
+          "finish": 3
+        },
+        {
+          "name": "B",
+          "prompt": 2,
+          "target": 3,
+          "arrival": 0,
+          "computed": 4,
+          "emitted": 3,
+          "state": "FINISHED_LENGTH",
+          "blocks": 0,
+          "first_output": 4,
+          "finish": 6
+        },
+        {
+          "name": "C",
+          "prompt": 6,
+          "target": 1,
+          "arrival": 1,
+          "computed": 3,
+          "emitted": 0,
+          "state": "RUNNING",
+          "blocks": 2,
+          "first_output": null,
+          "finish": null
+        }
+      ],
+      "running_after": [
+        "C"
+      ],
+      "waiting_after": [],
+      "peak_blocks": 4,
+      "used_after": 2,
+      "events": [
+        "B:finish"
+      ]
+    },
+    {
+      "step": 6,
+      "plans": {
+        "C": 2
+      },
+      "outputs": [],
+      "before": [
+        {
+          "name": "A",
+          "prompt": 4,
+          "target": 2,
+          "arrival": 0,
+          "computed": 5,
+          "emitted": 2,
+          "state": "FINISHED_LENGTH",
+          "blocks": 0,
+          "first_output": 2,
+          "finish": 3
+        },
+        {
+          "name": "B",
+          "prompt": 2,
+          "target": 3,
+          "arrival": 0,
+          "computed": 4,
+          "emitted": 3,
+          "state": "FINISHED_LENGTH",
+          "blocks": 0,
+          "first_output": 4,
+          "finish": 6
+        },
+        {
+          "name": "C",
+          "prompt": 6,
+          "target": 1,
+          "arrival": 1,
+          "computed": 3,
+          "emitted": 0,
+          "state": "RUNNING",
+          "blocks": 2,
+          "first_output": null,
+          "finish": null
+        }
+      ],
+      "after": [
+        {
+          "name": "A",
+          "prompt": 4,
+          "target": 2,
+          "arrival": 0,
+          "computed": 5,
+          "emitted": 2,
+          "state": "FINISHED_LENGTH",
+          "blocks": 0,
+          "first_output": 2,
+          "finish": 3
+        },
+        {
+          "name": "B",
+          "prompt": 2,
+          "target": 3,
+          "arrival": 0,
+          "computed": 4,
+          "emitted": 3,
+          "state": "FINISHED_LENGTH",
+          "blocks": 0,
+          "first_output": 4,
+          "finish": 6
+        },
+        {
+          "name": "C",
+          "prompt": 6,
+          "target": 1,
+          "arrival": 1,
+          "computed": 5,
+          "emitted": 0,
+          "state": "RUNNING",
+          "blocks": 3,
+          "first_output": null,
+          "finish": null
+        }
+      ],
+      "running_after": [
+        "C"
+      ],
+      "waiting_after": [],
+      "peak_blocks": 3,
+      "used_after": 3,
+      "events": []
+    },
+    {
+      "step": 7,
+      "plans": {
+        "C": 1
+      },
+      "outputs": [
+        "C"
+      ],
+      "before": [
+        {
+          "name": "A",
+          "prompt": 4,
+          "target": 2,
+          "arrival": 0,
+          "computed": 5,
+          "emitted": 2,
+          "state": "FINISHED_LENGTH",
+          "blocks": 0,
+          "first_output": 2,
+          "finish": 3
+        },
+        {
+          "name": "B",
+          "prompt": 2,
+          "target": 3,
+          "arrival": 0,
+          "computed": 4,
+          "emitted": 3,
+          "state": "FINISHED_LENGTH",
+          "blocks": 0,
+          "first_output": 4,
+          "finish": 6
+        },
+        {
+          "name": "C",
+          "prompt": 6,
+          "target": 1,
+          "arrival": 1,
+          "computed": 5,
+          "emitted": 0,
+          "state": "RUNNING",
+          "blocks": 3,
+          "first_output": null,
+          "finish": null
+        }
+      ],
+      "after": [
+        {
+          "name": "A",
+          "prompt": 4,
+          "target": 2,
+          "arrival": 0,
+          "computed": 5,
+          "emitted": 2,
+          "state": "FINISHED_LENGTH",
+          "blocks": 0,
+          "first_output": 2,
+          "finish": 3
+        },
+        {
+          "name": "B",
+          "prompt": 2,
+          "target": 3,
+          "arrival": 0,
+          "computed": 4,
+          "emitted": 3,
+          "state": "FINISHED_LENGTH",
+          "blocks": 0,
+          "first_output": 4,
+          "finish": 6
+        },
+        {
+          "name": "C",
+          "prompt": 6,
+          "target": 1,
+          "arrival": 1,
+          "computed": 6,
+          "emitted": 1,
+          "state": "FINISHED_LENGTH",
+          "blocks": 0,
+          "first_output": 8,
+          "finish": 8
+        }
+      ],
+      "running_after": [],
+      "waiting_after": [],
+      "peak_blocks": 3,
+      "used_after": 0,
+      "events": [
+        "C:finish"
+      ]
+    }
+  ],
+  "requests": [
+    {
+      "name": "A",
+      "prompt": 4,
+      "target": 2,
+      "arrival": 0,
+      "computed": 5,
+      "emitted": 2,
+      "state": "FINISHED_LENGTH",
+      "blocks": 0,
+      "first_output": 2,
+      "finish": 3
+    },
+    {
+      "name": "B",
+      "prompt": 2,
+      "target": 3,
+      "arrival": 0,
+      "computed": 4,
+      "emitted": 3,
+      "state": "FINISHED_LENGTH",
+      "blocks": 0,
+      "first_output": 4,
+      "finish": 6
+    },
+    {
+      "name": "C",
+      "prompt": 6,
+      "target": 1,
+      "arrival": 1,
+      "computed": 6,
+      "emitted": 1,
+      "state": "FINISHED_LENGTH",
+      "blocks": 0,
+      "first_output": 8,
+      "finish": 8
+    }
+  ]
+}
