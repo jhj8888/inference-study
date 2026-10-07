@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "scope": "Selected reading-entry files only; this is not a complete reproducible source snapshot.",
+  "projects": [
+    {
+      "id": "zero-to-sglang",
+      "upstream_commit": null,
+      "files": {
+        "README_zh.md": {
+          "sha256": "32a9ceba5d1b7891fe2d4f472e71cbff10b80159add7339fc433cbb7a4adecf3",
+          "bytes": 14603
+        },
+        "course-material/ch/part1/第1章_LLM入门.md": {
+          "sha256": "3ff2674e31464dc76d039c5385e078beb601ed054e7125727e6430d77f4fa860",
+          "bytes": 27869
+        },
+        "course-material/ch/part1/第2章_推理入门.md": {
+          "sha256": "0cca64e144c3f7dd649fe89b4410b8833c51561e2236b7e0b202ea0c9a3976ef",
+          "bytes": 31607
+        },
+        "course-material/ch/part1/第4章_推理的核心数据结构入门.md": {
+          "sha256": "5da0a74610251a8bebd35c90faff2e8e71174b9dfb6f6402874551e023ca441f",
+          "bytes": 19486
+        },
+        "course-material/ch/part1/第5章_Benchmark入门.md": {
+          "sha256": "5e8c02ee5ba5bcf7d64008de018b60abf663bcac26cb2da4a193270c1639fd85",
+          "bytes": 18259
+        }
+      }
+    },
+    {
+      "id": "mini-sglang",
+      "upstream_commit": null,
+      "files": {
+        "README.md": {
+          "sha256": "65fd311850ec8e69b8c68c98206b8b03d28c051516c5aa83bf73a20859447de9",
+          "bytes": 6702
+        },
+        "python/minisgl/models/llama.py": {
+          "sha256": "1d6eefd238e68c0ff5aa176258f8f1d2851c78f467e88a7f89f095dc15355d27",
+          "bytes": 2795
+        },
+        "python/minisgl/layers/attention.py": {
+          "sha256": "fc155cea18ce71f0753b110f8c37a961754d0f8471ccb402b5607685a8510811",
+          "bytes": 2089
+        },
+        "python/minisgl/scheduler/scheduler.py": {
+          "sha256": "decc817459aec97e8d6f3984add4b8bb80d9cc4c7f19e05469ead588d9e27b92",
+          "bytes": 10845
+        },
+        "python/minisgl/kvcache/radix_cache.py": {
+          "sha256": "eb6b456d8c8aa15f8cc65881192ffc54750f3193a791440b924bcf50c88e2192",
+          "bytes": 8159
+        }
+      }
+    },
+    {
+      "id": "sglang",
+      "upstream_commit": null,
+      "files": {
+        "README.md": {
+          "sha256": "a17003c5dceff6fdba08ad4c5e9e437e233d9a5df4030ed1128f053860a140b2",
+          "bytes": 9186
+        },
+        "python/sglang/srt/managers/scheduler.py": {
+          "sha256": "b61df5b750adc748a99ceb381b8494c199fb3f704d793da5a0217bd6bbb606c4",
+          "bytes": 268724
+        },
+        "python/sglang/srt/mem_cache/radix_cache.py": {
+          "sha256": "3a98ff02d5bb990fab3ff6700a4acd1ed865f9fc522daa17768f28fc6fe424e6",
+          "bytes": 30883
+        }
+      }
+    },
+    {
+      "id": "vllm",
+      "upstream_commit": null,
+      "files": {
+        "README.md": {
+          "sha256": "8d2e7cd8d120bcd91ddfa85ef957f7246021b4a3f46f2e1f4ccf084ec6c20026",
+          "bytes": 5708
+        },
+        "vllm/v1/engine/core.py": {
+          "sha256": "82d27ffb92e2d1b5f91d03800cb92d4edb67277ee10563341c60b515480214ad",
+          "bytes": 109589
+        },
+        "vllm/v1/core/sched/scheduler.py": {
+          "sha256": "b956bc2d88f803edf0ba87918cafdaeb6ddb72cd5b85d1872c88fef6aa6bdfb3",
+          "bytes": 154827
+        },
+        "vllm/v1/core/kv_cache_manager.py": {
+          "sha256": "6c1c13c4147408dc4b45d6970f19ee609ac2206194817f4a046ae03715f4c7e2",
+          "bytes": 41499
+        }
+      }
+    },
+    {
+      "id": "lmcache",
+      "upstream_commit": null,
+      "files": {
+        "README.md": {
+          "sha256": "60b8409940e9fd6abf7ed04ac984cad5200b1b5fb428f138684038091c0f4dae",
+          "bytes": 10877
+        },
+        "docs/design/README.md": {
+          "sha256": "e7b15cbe0674de4305d92a04b7ff3fc6c73381da1dbb4a4d55751ffcf87a704f",
+          "bytes": 1339
+        },
+        "lmcache/v1/cache_engine.py": {
+          "sha256": "968ba5906a6b77153f7ac3507bde686255b9ebc2de4c42f39ec507fd73f57572",
+          "bytes": 86145
+        },
+        "lmcache/v1/storage_backend/storage_manager.py": {
+          "sha256": "52d933c7c588f29f7915ae83b76ff90d023acd2872ba146f89eb3d50bd8a4d7b",
+          "bytes": 54664
+        },
+        "lmcache/integration/vllm/lmcache_connector_v1.py": {
+          "sha256": "160073c03e9a33a0cb59b2cdc40092cd54a45dc6dd6b2736a26a5bbcff49f8bd",
+          "bytes": 7411
+        }
+      }
+    },
+    {
+      "id": "mooncake",
+      "upstream_commit": null,
+      "files": {
+        "README.md": {
+          "sha256": "99d3246de03840db48fb1f062aa3161ff27660008b7a78346e32e3d213dd7add",
+          "bytes": 33457
+        },
+        "mooncake-transfer-engine/src/transfer_engine.cpp": {
+          "sha256": "dc9708bb8ddc2ecc14953bb01a90a777aa86a46bbe9b2be2ab0677be3d48b2db",
+          "bytes": 68275
+        }
+      }
+    }
+  ],
+  "observed_on": "2026-10-07"
+}

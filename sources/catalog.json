@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "scope": "Selected reading-entry files only; this is not a complete reproducible source snapshot.",
+  "projects": [
+    {
+      "id": "zero-to-sglang",
+      "relative_root": "../zero-to-sglang-main",
+      "files": [
+        "README_zh.md",
+        "course-material/ch/part1/第1章_LLM入门.md",
+        "course-material/ch/part1/第2章_推理入门.md",
+        "course-material/ch/part1/第4章_推理的核心数据结构入门.md",
+        "course-material/ch/part1/第5章_Benchmark入门.md"
+      ]
+    },
+    {
+      "id": "mini-sglang",
+      "relative_root": "../zero-to-sglang-main/mini-sglang-main",
+      "files": [
+        "README.md",
+        "python/minisgl/models/llama.py",
+        "python/minisgl/layers/attention.py",
+        "python/minisgl/scheduler/scheduler.py",
+        "python/minisgl/kvcache/radix_cache.py"
+      ]
+    },
+    {
+      "id": "sglang",
+      "relative_root": "../zero-to-sglang-main/sglang-main",
+      "files": [
+        "README.md",
+        "python/sglang/srt/managers/scheduler.py",
+        "python/sglang/srt/mem_cache/radix_cache.py"
+      ]
+    },
+    {
+      "id": "vllm",
+      "relative_root": "../vllm-main",
+      "files": [
+        "README.md",
+        "vllm/v1/engine/core.py",
+        "vllm/v1/core/sched/scheduler.py",
+        "vllm/v1/core/kv_cache_manager.py"
+      ]
+    },
+    {
+      "id": "lmcache",
+      "relative_root": "../LMCache-dev",
+      "files": [
+        "README.md",
+        "docs/design/README.md",
+        "lmcache/v1/cache_engine.py",
+        "lmcache/v1/storage_backend/storage_manager.py",
+        "lmcache/integration/vllm/lmcache_connector_v1.py"
+      ]
+    },
+    {
+      "id": "mooncake",
+      "relative_root": "../Mooncake-main",
+      "files": [
+        "README.md",
+        "mooncake-transfer-engine/src/transfer_engine.cpp"
+      ]
+    }
+  ]
+}
