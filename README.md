@@ -10,6 +10,7 @@
 
 - [第一周图文教材](lessons/week01/README.md)与[离线交互版](lessons/week01/index.html)：7 张图、3 个交互演示、CPU 正确性实验、练习和答案。
 - [第二周推理性能分析](lessons/week02/README.md)与[离线交互版](lessons/week02/index.html)：7 张图、4 个交互实验、估算脚本与[实验协议](experiments/w02-performance/protocol.md)。
+- [第三周 vLLM 资料阅读导航](sources/w03-reading-route.md)：中文源码导读、英文教程与本地 V1 源码的每日对应关系及版本差异提示。
 - [衔接已有 MiniMind / Pyre 笔记](lessons/week01/prior-notes.md)：按已有内容选择复习入口。
 - [今天的学习入口](logs/2026-10-07.md)：Transformer 推理路径与 Q/K/V 张量形状，2 小时。
 - [当前进度](PROGRESS.md)：实际完成情况、卡点、下一次任务。

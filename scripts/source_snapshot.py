@@ -52,7 +52,8 @@ def main():
     capture.add_argument("--observed-on", required=True, type=date.fromisoformat)
     verify = commands.add_parser("verify", help="Compare current files with a baseline.")
     verify.add_argument(
-        "--baseline", type=Path, default=REPO / "sources/baseline-2026-10-07.json"
+        "--baseline", type=Path,
+        default=REPO / "sources/baseline-2026-10-07-w03-guides.json"
     )
     args = parser.parse_args()
     try:

@@ -9,11 +9,15 @@
 | W01–W02 | zero-to-sglang 导读 | zero-to-sglang-main/course-material/ch/part1/：第 1、2、4、5 章 |
 | W01、W04–W05 | mini-sglang | zero-to-sglang-main/mini-sglang-main/python/minisgl/：models/llama.py、layers/attention.py、scheduler/scheduler.py、kvcache/radix_cache.py |
 | W03–W04 | vLLM | vllm-main/vllm/v1/：engine/core.py、core/sched/scheduler.py、core/kv_cache_manager.py |
+| W03 主线，W04 继续 | 中文 vLLM 学习手册 | vllm-learning-book-main/：01-overview/、03-code-walkthrough/、07-hands-on/ |
+| W03 补充，W02 可回查 | 英文 vLLM 幻灯教程 | tutorials-vllm-main/：06-openai-api-standard/、12-input-output-tokenization/、14-continuous-batching/ 等目录下 slides.md |
 | W05 | SGLang | zero-to-sglang-main/sglang-main/python/sglang/srt/：managers/scheduler.py、mem_cache/radix_cache.py |
 | W06 | LMCache | LMCache-dev/lmcache/v1/cache_engine.py、v1/storage_backend/storage_manager.py、integration/vllm/lmcache_connector_v1.py |
 | W07 | Mooncake | Mooncake-main/README.md、mooncake-transfer-engine/src/transfer_engine.cpp；Store 的具体取回链在该阶段进一步定位 |
 
 W08 沿用缓存、I/O 和传输的证据。W09–W10 的后训练框架尚未选定；到该阶段再核实实际版本和同步接口。不要假定以上仓库已包含所需的完整训练闭环。
+
+第三周的逐日章节、可点击的本地文件入口与版本差异见 [W03 阅读导航](w03-reading-route.md)。这两份资料用于备课和阅读辅助；真实调用链仍须核实源码。
 
 ## 已核实的定位锚点
 
@@ -42,9 +46,9 @@ LMCache 的设计文档规则要求先查 docs/design/ 中对应模块路径；�
 
 ## 版本与指纹的边界
 
-已检查的 6 个资料/源码根目录（导读、mini-sglang、SGLang、vLLM、LMCache、Mooncake）均无顶层 .git，因此上游提交号记为 null（未知），不从目录名 main/dev 推断版本。
+已检查的 8 个资料/源码根目录（zero-to-sglang 导读、mini-sglang、SGLang、vLLM、两份 vLLM 教程、LMCache、Mooncake）均无顶层 .git，因此各目录实际上游提交号记为 null（未知），不从目录名 main/dev 推断版本。中文 vLLM 手册在 source.lock.json 声明的被讲解源码版本单独记在 W03 阅读导航中，它不等于本地 vllm-main 的已验证提交号。
 
-baseline-2026-10-07.json 只记录 catalog.json 中选定入口文件的 SHA-256 与字节数，可以判断这些文件以后是否变化。它不能证明其他文件没变，也不能凭哈希恢复源码。当前完整源码版本锁定仍为待办。
+当前基线为 [baseline-2026-10-07-w03-guides.json](baseline-2026-10-07-w03-guides.json)，覆盖新增教程和扩充后的 vLLM 阅读入口；原 baseline-2026-10-07.json 保留不变，代表最初 6 项资料的选定文件。基线只记录选定入口文件的 SHA-256 与字节数，可以判断这些文件以后是否变化。它不能证明其他文件没变，也不能凭哈希恢复源码。当前完整源码版本锁定仍为待办。
 
 进入 W03、正式调用链分析或性能实验前：
 
@@ -58,6 +62,8 @@ baseline-2026-10-07.json 只记录 catalog.json 中选定入口文件的 SHA-256
 在学习仓库根目录执行（只用 Python 标准库）：
 
     py -3.11 scripts/source_snapshot.py verify
+
+默认对照当前 W03 扩充基线。旧基线与当前 catalog 的项目及文件集合不同，直接用它核验当前 catalog 会报告差异；回查历史时应使用同一次 Git 提交中的 catalog、脚本及基线。
 
 源码确实需要更换时，先检查差异，再保存新名称的基线，例如：
 

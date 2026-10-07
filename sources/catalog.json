@@ -40,7 +40,45 @@
         "README.md",
         "vllm/v1/engine/core.py",
         "vllm/v1/core/sched/scheduler.py",
-        "vllm/v1/core/kv_cache_manager.py"
+        "vllm/v1/core/kv_cache_manager.py",
+        "vllm/v1/engine/async_llm.py",
+        "vllm/v1/engine/input_processor.py",
+        "vllm/v1/engine/output_processor.py",
+        "vllm/v1/worker/gpu_worker.py",
+        "vllm/v1/worker/gpu_model_runner.py"
+      ]
+    },
+    {
+      "id": "vllm-learning-book",
+      "relative_root": "../vllm-learning-book-main",
+      "files": [
+        "README.md",
+        "source.lock.json",
+        ".gitmodules",
+        "01-overview/02-architecture.md",
+        "01-overview/03-v0-vs-v1.md",
+        "01-overview/05-process-and-ipc-internals.md",
+        "03-code-walkthrough/01-entry-points.md",
+        "03-code-walkthrough/02-scheduler.md",
+        "03-code-walkthrough/03-kv-cache-manager.md",
+        "03-code-walkthrough/04-model-runner.md",
+        "03-code-walkthrough/08-input-processing-and-tokenization.md",
+        "03-code-walkthrough/09-output-processing-and-streaming.md",
+        "07-hands-on/02-trace-a-request.md"
+      ]
+    },
+    {
+      "id": "tutorials-vllm",
+      "relative_root": "../tutorials-vllm-main",
+      "files": [
+        "README.md",
+        "05-first-model-serving/slides.md",
+        "06-openai-api-standard/slides.md",
+        "12-input-output-tokenization/slides.md",
+        "14-continuous-batching/slides.md",
+        "15-kv-cache-optimization/slides.md",
+        "26-observability/slides.md",
+        "27-benchmarking/slides.md"
       ]
     },
     {
