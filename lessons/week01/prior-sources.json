@@ -1,0 +1,66 @@
+{
+  "observed_on": "2026-10-07",
+  "local_roots": {
+    "minimind": "D:\\workdir\\2src\\minimind",
+    "pyre": "D:\\workdir\\2src\\pyre"
+  },
+  "minimind_worktree_head": "4497610ec0a85d2d0a3db488fd4c1e2f12a416ab",
+  "files": [
+    {
+      "project": "minimind",
+      "file": "my_notes/02.minimind_model_minimind_analysis.md",
+      "sha256": "7692294d32162312151b50d8e76bc2055fdf36d78db364a0d0c56cd00d556b02",
+      "bytes": 40918,
+      "review_scope": "relevant sections"
+    },
+    {
+      "project": "minimind",
+      "file": "my_notes/02.05.RoPE旋转位置编码可视化解释.md",
+      "sha256": "e9368a93b45072a8c0029e7d057bd6977e035417aeb2daf6df06d03238956cd5",
+      "bytes": 17124,
+      "review_scope": "relevant sections"
+    },
+    {
+      "project": "minimind",
+      "file": "model/model_minimind.py",
+      "sha256": "8188a3165e9c9b8c1eac4c5889fbd67732cc0db54b10701d1a21a0526deb2c12",
+      "bytes": 18957,
+      "review_scope": "relevant sections"
+    },
+    {
+      "project": "pyre",
+      "file": "practice/02.softmax.py",
+      "sha256": "960bcaa65a58b7efc53ae677d64a0431d873dfa238b598d2359beeb97e57f182",
+      "bytes": 200,
+      "review_scope": "relevant sections"
+    },
+    {
+      "project": "pyre",
+      "file": "practice/05.attention.py",
+      "sha256": "b145a6b6dca814003a9198f6b41c64dbd2c7bcbee38d8f3a2c1f1e25c9485f3f",
+      "bytes": 235,
+      "review_scope": "relevant sections"
+    },
+    {
+      "project": "pyre",
+      "file": "practice/05.scaled_dot_product_attention笔记.pdf",
+      "sha256": "7e26cccc679a6db730d9485034f925d368540b2aa1b9f6b817b7d7b5509b5327",
+      "bytes": 188382,
+      "review_scope": "first two pages"
+    },
+    {
+      "project": "pyre",
+      "file": "practice/09.因果注意力机制详解.pdf",
+      "sha256": "3d962d3ac51c5e41ad0af42b9fb01b1f1b2591574e98a86faf1ed95481fb87d8",
+      "bytes": 151449,
+      "review_scope": "first two pages"
+    },
+    {
+      "project": "pyre",
+      "file": "practice/10.GroupQueryAttention 技术详解.pdf",
+      "sha256": "8d218c378f47e1d2b5038c10c5339f54186e68f919c6b58e1d1644fdde398ca4",
+      "bytes": 197299,
+      "review_scope": "first two pages"
+    }
+  ]
+}

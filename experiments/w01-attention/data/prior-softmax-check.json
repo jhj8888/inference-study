@@ -1,0 +1,21 @@
+{
+  "original_result": "TypeError",
+  "message": "unsupported operand type(s) for -: 'Tensor' and 'torch.return_types.max'",
+  "torch": "2.14.1+cpu",
+  "input": [
+    [
+      1000.0,
+      1001.0,
+      1002.0
+    ]
+  ],
+  "corrected_output": [
+    [
+      0.09003057317038046,
+      0.24472847105479764,
+      0.6652409557748218
+    ]
+  ],
+  "source_modified": false,
+  "source_sha256": "960bcaa65a58b7efc53ae677d64a0431d873dfa238b598d2359beeb97e57f182"
+}

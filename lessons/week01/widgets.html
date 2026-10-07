@@ -1,0 +1,37 @@
+<!-- attention:start -->
+<section class="widget" aria-labelledby="attention-title">
+<div class="widget-kicker">交互 01 / 看见 Attention</div>
+<h3 id="attention-title">只改可见范围，输出就会改变</h3>
+<p>使用正文中相同的 3×2 Q/K/V。拖动滑块选择一个 query，比较归一化权重与输出。</p>
+<div class="controls"><label for="query-row">Query 位置 <output id="query-label">2</output><input id="query-row" type="range" min="0" max="2" value="2"></label><label class="check"><input id="causal" type="checkbox" checked>开启因果掩码</label></div>
+<div class="widget-grid"><div id="attention-matrix"></div><div><div id="attention-bars"></div><p id="attention-result" class="result" aria-live="polite"></p></div></div>
+<p id="attention-explain" class="widget-note"></p>
+</section>
+<!-- attention:end -->
+<!-- decode:start -->
+<section class="widget" aria-labelledby="decode-title">
+<div class="widget-kicker">交互 02 / 从 prefill 走到 decode</div>
+<h3 id="decode-title">“已经输出”与“已经缓存”相差一步</h3>
+<p>符号演示：4 个 prompt token，目标生成 4 个 token。每次推进代表一次模型 forward，不代表真实耗时。</p>
+<div class="controls"><button id="decode-prev" type="button">← 上一步</button><button id="decode-next" type="button">下一步 →</button><button id="decode-reset" type="button">重置</button><strong id="decode-stage" aria-live="polite"></strong></div>
+<div id="decode-tokens" class="tokens"></div>
+<div class="widget-grid"><div><h4>本次动作</h4><p id="decode-action"></p></div><div><h4>缓存账本</h4><p id="decode-cache" class="result"></p></div></div>
+<p class="widget-note">蓝色：先前已缓存；橙色：本次写入；虚线：已生成但尚未送回模型。各层都有自己的 K/V，此处只展示 token 位置。</p>
+</section>
+<!-- decode:end -->
+<!-- capacity:start -->
+<section class="widget" aria-labelledby="capacity-title">
+<div class="widget-kicker">交互 03 / 你的 KV 容量计算器</div>
+<h3 id="capacity-title">把上下文、并发和 KV 精度拆开算</h3>
+<p>固定 L=32、Hq=32、d=128；普通全注意力、无前缀共享。修改一个变量，观察谁在相乘。</p>
+<div class="controls">
+<label for="kv-mode">头结构<select id="kv-mode"><option value="32">MHA · Hkv=32</option><option value="8" selected>GQA · Hkv=8</option><option value="1">MQA · Hkv=1</option></select></label>
+<label for="kv-requests">驻留请求数<select id="kv-requests"><option>1</option><option>4</option><option selected>8</option><option>16</option></select></label>
+<label for="kv-bytes">每元素字节<select id="kv-bytes"><option value="2">2 bytes · FP16/BF16</option><option value="1">1 byte · 理想量化载荷</option><option value="4">4 bytes · FP32</option></select></label>
+<label for="kv-budget">净 KV 预算 / GiB<input id="kv-budget" type="number" value="16" min="0.125" max="1024" step="0.125"></label>
+</div>
+<label for="kv-context">每请求上下文 <output id="kv-context-label">8192 token</output><input id="kv-context" type="range" min="1024" max="32768" step="1024" value="8192"></label>
+<div id="kv-stats" class="stats" aria-live="polite"></div>
+<div id="kv-chart"></div><p id="kv-explain" class="widget-note"></p>
+</section>
+<!-- capacity:end -->

@@ -1,0 +1,23 @@
+{
+  "observed_on": "2026-10-07",
+  "files": [
+    {
+      "project": "mini-sglang",
+      "file": "python/minisgl/models/llama.py",
+      "upstream_commit": null,
+      "sha256": "1d6eefd238e68c0ff5aa176258f8f1d2851c78f467e88a7f89f095dc15355d27"
+    },
+    {
+      "project": "mini-sglang",
+      "file": "python/minisgl/models/utils.py",
+      "upstream_commit": null,
+      "sha256": "2d5f6758b51d6e4750ba412e0645d6d0fcf046cf508930fa5de8021f3662d83c"
+    },
+    {
+      "project": "mini-sglang",
+      "file": "python/minisgl/layers/attention.py",
+      "upstream_commit": null,
+      "sha256": "fc155cea18ce71f0753b110f8c37a961754d0f8471ccb402b5607685a8510811"
+    }
+  ]
+}

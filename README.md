@@ -8,6 +8,8 @@
 
 ## 从这里开始
 
+- [第一周图文教材](lessons/week01/README.md)与[离线交互版](lessons/week01/index.html)：7 张图、3 个交互演示、CPU 正确性实验、练习和答案。
+- [衔接已有 MiniMind / Pyre 笔记](lessons/week01/prior-notes.md)：按已有内容选择复习入口。
 - [今天的学习入口](logs/2026-10-07.md)：Transformer 推理路径与 Q/K/V 张量形状，2 小时。
 - [当前进度](PROGRESS.md)：实际完成情况、卡点、下一次任务。
 - [完整 12 周计划](plan/README.md)与[逐日日历](plan/schedule.csv)。
@@ -27,6 +29,7 @@
 | 目录 | 内容 |
 | --- | --- |
 | plan/ | 原始学习模块与逐日预算 |
+| lessons/ | 图文教材、离线交互页面及可重建图表 |
 | logs/ | 每次学习的真实记录 |
 | notes/ | 原理推导、源码调用链和对照笔记 |
 | experiments/ | 最小实验与复现命令 |
